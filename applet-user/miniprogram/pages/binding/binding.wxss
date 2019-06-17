@@ -1,0 +1,135 @@
+/* pages/make/make.wxss */
+page{
+  background-color: #f5f5f5;
+  border-top:1rpx solid #e5e5e5;
+  color:#000;
+  font-size: 29rpx; 
+  padding-bottom: 80rpx;
+}
+
+.foamet{
+  padding:20rpx 20rpx 20rpx 25rpx;
+  border-bottom: 1px solid #e5e5e5;
+}
+.palemt{
+   margin-bottom: 10rpx
+}
+.lamdert{
+    padding: 20rpx;
+    background-color: #f5f5f5;
+    color: #000;
+    line-height: 50rpx;
+    font-size: 33rpx;
+}
+.qpelret{
+   width: 100%;  
+}
+.soamert{
+    line-height: 80rpx;
+    height: 80rpx;  
+    width: 100%;
+}
+.caoernt{
+    width:146rpx;
+}
+image.wlaonet{
+   width: 15px;
+   height:15px;
+}
+.palerkt{
+  height: 100rpx;
+  padding-right: 20rpx;
+}
+.palerkt:not(:last-child){
+  border-bottom: 1px solid #e5e5e5;
+}
+.textareaVoamdet{
+    margin-top: 40rpx;
+}
+.textareaVoamdet textarea{
+   height: 150rpx;
+   margin-bottom:8rpx;
+}
+.cosertp{
+   width: 150rpx;
+   line-height: 170rpx;
+   height: 150rpx;
+   text-align: center;
+   background-color: #f2f2f2;
+
+}
+
+.cosertp image{
+    width:45rpx;
+    height: 45rpx;
+}
+.vowernt{
+  float: left;
+}
+
+
+.sumoaenrt{
+  background-color: #24c699;
+  line-height: 84rpx;
+  height:84rpx;
+  width: 80%;
+  margin: 0 auto;
+  border-radius:999rpx; 
+  color: white;
+  text-align: center;
+  font-size: 32rpx;
+  margin-top:160rpx;
+}
+
+.qpamertt{
+    width: 80rpx;
+    margin: 20rpx auto;
+}
+
+.lommd{
+  background-color:#fff;
+  padding-left:30rpx;
+  font-size: 30rpx;
+}
+.wx-switch-input{
+  width:82rpx !important;
+  height:45rpx !important;
+  background: #24c699 !important;
+  
+}
+.wx-switch-input::before{
+  width:80rpx !important;
+  height: 45rpx !important;
+  background: #f3f3f3 !important;
+}
+.wx-switch-input::after{
+  width: 40rpx !important;
+  height: 45rpx !important;
+}
+.yoamler{
+  margin-right: 15rpx;
+}
+.coept{  
+  margin-top: 25rpx;
+  padding-left: 30rpx;
+ 
+}
+.woamert{
+  font-size:27rpx;
+  color: #484848;
+}
+.notChenke{
+   width: 19rpx;
+   height: 19rpx;
+   border-radius:100%;
+   border: 1px solid #24c699 
+}
+.chenke{
+   width: 19rpx;
+   height: 19rpx;
+   border-radius:100%;
+   border: 1px solid #24c699 ;
+   background-color: #24c699;
+   
+}
+

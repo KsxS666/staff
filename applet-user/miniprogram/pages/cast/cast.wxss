@@ -1,0 +1,75 @@
+/* pages/cast/cast.wxss */
+.times-weight-card{
+  height: 180rpx;
+  padding: 0 25rpx
+}
+.card-item:nth-child(1):after{
+  content: '';                 /*CSS伪类用法*/
+  position: absolute;         /*定位背景横线的位置*/
+  top: 50%;
+  right: 0;
+  background: #e5e5e5;       /*宽和高做出来的背景横线*/
+  width: 1px;
+  height: 50%;
+  transform: translate(-50%,-50%)
+}
+.card-item:nth-child(2){
+  text-align: right
+}
+.card-item image{
+  width: 30rpx;
+  height: 30rpx;
+}
+.card-item .num{
+  font-size: 60rpx;
+}
+.echarts-container{
+  height: calc(100% - 126rpx)
+}
+.sheet-btn{
+  display: flex;
+  align-content: center
+}
+.record-item{
+  display: flex;
+  height: 126rpx;
+  justify-content: space-between;
+  padding: 0 30rpx;
+}
+.record-item:first-child{
+  border-top: 1px solid #e5e5e5
+}
+.record-item image{
+  width: 60rpx;
+  height: 60rpx;
+}
+.record-item .double{
+  display: flex;
+  flex-flow: column;
+}
+.record-item .double .name{
+  font-size: 32rpx
+}
+.record-item .double .integral{
+  color: #FFAC4A;
+  font-size: 24rpx;
+}
+.right-double{
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+.right-double .weight{
+  font-size: 30rpx;
+}
+.cast-record-wrp .empty{
+  display: flex;
+  flex-flow: column;
+  height: 500rpx;
+  align-items: center;
+  padding-top: 60rpx;
+}
+.cast-record-wrp .empty image{
+  height: 400rpx;
+}

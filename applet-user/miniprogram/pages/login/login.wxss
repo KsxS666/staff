@@ -1,0 +1,92 @@
+/* pages/login/login.wxss */
+page{
+  background: #ffffff;
+  padding: 100rpx 30rpx 0 30rpx;
+  width: auto;
+  display: flex;
+  flex-flow: column;
+}
+.greeting{
+  padding-bottom: 60rpx;
+}
+.greeting view:nth-child(1){
+  font-size: 46rpx;
+}
+.greeting view:nth-child(2){
+  color: #666666;
+  font-size: 30rpx;
+  margin-top: 20rpx;
+}
+form input{
+  padding: 30rpx 0;
+  border-bottom: 1px solid #bdbdbd
+}
+.sub-btn{
+  background: #24C7AE;
+  margin: 60rpx 0 20rpx 0;
+  color: #ffffff;
+  font-size: 36rpx;
+  border-radius: 6rpx;
+}
+.sub-btn::after{
+  border: none;
+}
+.else-in-tips{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50rpx;
+}
+.column-wrp{
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.else-in-weChat .tips{
+  color: #C3C1C1;
+  font-size: 30rpx;
+  position: relative
+}
+.else-in-weChat .tips::before{
+  content: '';
+  height: 1px;
+  width: 54rpx;
+  background: #C3C1C1;
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: -50%
+}
+.else-in-weChat .tips::after{
+  content: '';
+  height: 1px;
+  width: 54rpx;
+  background: #C3C1C1;
+  position: absolute;
+  display: block;
+  top: 50%;
+  right: -50%
+}
+image.weChat-image{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin-top: 40rpx;
+}
+.go-regist{
+  margin-top:60rpx;
+}
+.go-regist .tips{
+  color: #C3C1C1;
+  font-size: 24rpx;
+}
+.go-regist-btn{
+  border: 1px solid #e5e5e5;
+  width: 300rpx;
+  height: 68rpx;
+  line-height: 68rpx;
+  font-size: 30rpx;
+  text-align: center;
+  margin-top: 30rpx;
+  border-radius: 6rpx;
+}

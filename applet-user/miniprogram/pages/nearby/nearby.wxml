@@ -1,0 +1,35 @@
+<!--pages/nearby/nearby.wxml-->
+<!-- <view class='map_container'> -->
+<map class='flex-item1' id="map" longitude='{{longitude}}' latitude='{{latitude}}' scale='14' markers='{{markers}}' bindcontroltap="controltap" circles='{{circles}}' show-location enable-3D='true' enable-overlooking='true' enable-rotate='true'>
+  <cover-view class='legend flex'>
+    <cover-view class='legend-item flex-item1 {{isSmart ? "" : "opc06"}}' data-index='0'>
+      <cover-image src='../../images/nearby/1.png'></cover-image>
+      <cover-view>智能设备</cover-view>
+    </cover-view>
+    <cover-view class='legend-item flex-item1' data-index='0'>
+      <cover-image src='../../images/nearby/6.png'></cover-image>
+      <cover-view>非智能设备</cover-view>
+    </cover-view>
+  </cover-view>
+  <cover-view class='nearby-tips' hidden='{{!isTip}}'>
+    <cover-image src='../../images/nearby/c.png' bindtap='hideTip'></cover-image>
+    <cover-view>可点击查看设备详情</cover-view>
+  </cover-view>
+</map>
+<!-- </view> -->
+<view class='cur-loc-info flex'>
+  <view wx:if='{{!none}}' class='flex'>
+    <image src='../../images/nearby/l.png'></image>
+    <view class='flex-item1'>
+      <view class='name text-over-flow'>{{curLocationInfo.desc}}</view>
+      <view class='desc text-over-flow'>{{curLocationInfo.name}}</view>
+    </view>
+  </view>
+  <view wx:else>
+    <button open-type='openSetting'>获取位置</button>
+  </view>
+  <view class='list-mode flex bor-e5 ripple' bindtap='goNearbyList'>
+    <view>列表</view>
+    <view>模式</view>
+  </view>
+</view>

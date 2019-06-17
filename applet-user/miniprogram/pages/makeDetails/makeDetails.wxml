@@ -1,0 +1,35 @@
+<!--pages/makeDetails/makeDetails.wxml-->
+<import src='../../template/make/progress.wxml' />
+<template is='progress' data='{{stateCode}}'></template>
+  <view class='recy-list-wrp'>
+    <view class='head bor-e5 pad25'>
+      <view class='flex-item1 flex'>回收清单</view>
+      <view class='flex-item1 flex t-center'>预估积分</view>     
+    </view>
+    <view class='content'>
+      <view class='recy-content-wrp bor-e5'>
+        <block wx:for='{{dataList.billList}}'>
+          <view class='list-item'>
+            <text class='name bold'>{{item.typeName}}</text>
+            <text class='integral flex-item1'>{{item.integral}}</text>
+          </view>
+        </block>    
+      </view>
+      <view class='bottom'>
+        <view class='flex-item1 flex' bindtap='toCall' data-adminPhone='{{dataList.adminPhone}}'><image src='../../images/appointment/icon-phone.png' ></image><text class='callTitle'>呼叫管理员</text></view>
+        <view class='flex-item1 flex'>
+          合计：<text class='totalIntegral bold'>{{dataList.integral}}</text>
+        </view>
+      </view>
+      <view class='remark flex' wx:if="{{dataList.typeNote}}">
+        <text>备注:{{dataList.typeNote}}</text>
+      </view>
+      <view class='address'>
+        <view><text>联系人：{{dataList.memberName}}</text><text>{{dataList.phone}}</text></view>
+        <view>上门地址：{{dataList.address}}</view>
+        <view>预约时间：{{dataList.appointmentTime}}</view>
+        <view wx:if='{{dataList.doorTime}}' style="color: red" >上门时间：{{dataList.doorTime}}</view>
+        
+      </view>
+    </view>
+  </view>

@@ -1,0 +1,64 @@
+/* pages/makeRecord/makeRecord.wxss */
+.data-wrp{
+  border-top: 1px solid #e5e5e5
+}
+.item{
+  /* padding-top: 20rpx; */
+  /* height: 234rpx; */
+  background: #ffffff;
+  margin-bottom: 20rpx;
+  display: flex;
+  flex-flow: column;
+}
+.item-default {
+  padding: 20rpx 30rpx;
+}
+.item-first{
+  height: 66%;
+  display: flex;
+  justify-content: center;
+  flex-flow: column
+}
+.title-state{
+  justify-content: space-between
+}
+.title-state text:nth-child(1){
+  font-size: 34rpx;
+}
+.title-state text:nth-child(2){
+  color: #F5AA28;
+  font-size: 30rpx;
+}
+.appoint-time{
+  font-size: 26rpx;
+  margin-top: 20rpx;
+}
+.door-time{
+  font-size: 26rpx;
+  margin-top: 20rpx;
+  color: red,
+}
+.item-second{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.item-second .num{
+  color: #FFAB4A;
+  font-size: 40rpx;
+  margin-right: 20rpx;
+}
+.item-second .tips{
+  color: #666666;
+  font-size: 28rpx;
+}
+.cancel-btn{
+  color: #24C7AE;
+  width: 152rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  text-align: center;
+  border-radius: 8rpx;
+  font-size: 30rpx;
+  border: 1px solid #24C7AE
+}

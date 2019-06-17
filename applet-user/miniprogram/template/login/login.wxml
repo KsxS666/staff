@@ -1,0 +1,6 @@
+<template name='greeting'>
+  <view class='greeting'>
+    <view class='bold'>您好，</view>
+    <view>欢迎来到分类之家智能回收!</view>  
+  </view>
+</template>

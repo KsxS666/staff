@@ -1,0 +1,72 @@
+/* pages/my/my.wxss */
+page{
+  font-size: 34rpx;
+  width: auto;
+  display: flex;
+  flex-flow: column;
+  height: 100%
+}
+.pad30{
+  padding: 30rpx;
+}
+.user-info-card{
+  height: 400rpx;
+  margin-bottom: 20rpx;
+  background: #ffffff;
+  display: flex;
+  flex-flow: column;
+  padding-bottom: 0
+}
+.user-info-card .first{
+  display: flex;
+  justify-content: space-between
+}
+.user-info-card .first .name-sign{
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+.user-info-card .first .name-sign .name{
+  font-size: 46rpx;
+}
+.user-info-card .first .name-sign .sign{
+  color: #999999;
+  font-size: 30rpx;
+}
+.user-info-card .first .name-sign text:nth-child(2){
+  margin-top: 20rpx;
+}
+.ava-wrp{
+  width: 114rpx;
+  height: 114rpx;
+}
+.ava-wrp .ava{
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 8rpx;
+}
+.option-wrp{
+  background: #ffffff;
+  padding: 0 30rpx 0 30rpx;
+}
+.option-wrp .option-item{
+  height: 106rpx;
+  justify-content: space-between;
+  font-size: 30rpx;
+}
+.option-wrp .option-item:not(:last-child) {
+  border-bottom: 1px solid #e5e5e5
+}
+.option-wrp .option-item image{
+  width: 80rpx;
+  height: 80rpx
+}
+.logout{
+  font-size: 30rpx;
+  justify-content: center;
+  height: 100rpx;
+  margin-top: 100rpx;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;  
+}

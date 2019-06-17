@@ -1,0 +1,44 @@
+<template name='progress'>
+  <view class='progress-wrp flex mgb' wx:if="{{isNew}}">
+    <view class='flex-item1'>
+      <image src='../../images/appointment/img-progress1-active.png'></image>
+      <view class='title active'>填写预约</view>
+      <image src='../../images/appointment/img-dot-active.png' class='dot'></image>
+    </view>
+    <view class='flex-item1'>
+      <image src='../../images/appointment/img-progress2.png'></image>
+      <view class='title'>管理员上门</view>
+      <image src='../../images/appointment/img-dot.png' class='dot'></image>
+    </view>
+    <view class='flex-item1'>
+      <image src='../../images/appointment/img-progress3.png'></image>
+      <view class='title'>马上评估</view>
+      <image src='../../images/appointment/img-dot.png' class='dot'></image>
+    </view>
+    <view class='flex-item1'>
+      <image src='../../images/appointment/img-progress4.png'></image>
+      <view class='title'>积分到账</view>
+    </view>    
+  </view>
+  <view class='progress-wrp flex mgb' wx:else>
+    <view class='flex-item1'>
+      <image src='../../images/appointment/img-progress1-active.png'></image>
+      <view class='title active'>填写预约</view>
+      <image src='../../images/appointment/img-dot-active.png' class='dot'></image>
+    </view>
+    <view class='flex-item1'>
+      <image src='{{stateCode === 1 ? "../../images/appointment/img-progress2-active.png" : "../../images/appointment/img-progress2.png"}}'></image>
+      <view class='title {{stateCode === 1 ? "active" : ""}}'>管理员上门</view>
+      <image src='{{stateCode === 1 ? "../../images/appointment/img-dot-active.png" : "../../images/appointment/img-dot.png"}}' class='dot'></image>
+    </view>
+    <view class='flex-item1'>
+      <image src='{{stateCode === 4 ? "../../images/appointment/img-progress3-active.png" : "../../images/appointment/img-progress3.png"}}'></image>
+      <view class='title {{stateCode === 4 ? "active" : ""}}'>马上评估</view>
+      <image src='{{stateCode === 4 ? "../../images/appointment/img-dot-active.png" : "../../images/appointment/img-dot.png"}}' class='dot'></image>
+    </view>
+    <view class='flex-item1'>
+      <image src='{{stateCode === 4 ? "../../images/appointment/img-progress4-active.png" : "../../images/appointment/img-progress4.png"}}'></image>
+      <view class='title {{stateCode === 4 ? "active" : ""}}'>积分到账</view>
+    </view>
+  </view>  
+</template>

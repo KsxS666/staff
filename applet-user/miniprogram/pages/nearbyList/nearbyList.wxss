@@ -1,0 +1,27 @@
+/* pages/nearbyList/nearbyList.wxss */
+.list-item{
+  
+}
+.type-wrp{
+  height: 160rpx;
+  font-size: 24rpx;
+  display: flex;
+}
+.type-wrp .type-item{
+  width: 140rpx;
+  flex-flow: column;
+  justify-content: center;
+}
+.type-wrp image{
+  width: 50rpx;
+  height: 50rpx;
+}
+.location-wrp{
+  height: 100rpx;
+  font-size: 30rpx;
+  padding: 0 25rpx;
+}
+.location-wrp image{
+  width: 46rpx;
+  height: 46rpx;
+}

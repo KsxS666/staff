@@ -1,0 +1,12 @@
+page{
+  background: #ffffff;
+  padding: 50rpx 30rpx 0 30rpx;
+  width: auto;
+  display: flex;
+  flex-flow: column;
+}
+.regist-tips{
+  margin: 40rpx auto;
+  color: #C3C1C1;
+  font-size: 30rpx;
+}

@@ -1,0 +1,32 @@
+/* pages/forget/forget.wxss */
+page{
+  height: 100%
+}
+.wrp{
+  padding: 100rpx 30rpx 0 30rpx;
+  height: 100%
+}
+.b-title{
+  font-size: 46rpx;
+  padding-bottom: 160rpx;
+}
+input{
+  padding-bottom: 20rpx
+}
+.get-phonecode-btn{
+  height: 100rpx;
+  border-radius: 60rpx;
+  margin: 100rpx auto;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 30rpx;
+  background: #f3f3f3;
+  color: #999999
+}
+.get-phonecode-btn.isActive{
+  background: #24C7AE;
+  color: #ffffff
+}
+button::after{
+  border: 0
+}

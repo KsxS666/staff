@@ -1,0 +1,73 @@
+<import src='../../template/make/recy-dialog.wxml' />
+<import src='../../template/common/overlay.wxml' />
+<import src='../../template/make/progress.wxml' />
+<template is='recy-dialog' data='{{isOption, estimate, levelAry1, levelAry2, levelAry3, levelIndex1, levelIndex2, levelIndex3}}'></template>
+<view  bindtap='toHideRecyOption'>
+  <template is='overlay' wx:if='{{isMask}}'></template>
+</view>
+<view class='relative'>
+  <view class='foamet'>
+    <view class='flex palemt bold'>
+      <text class='flex-item1 text-over-flow'>{{userName}}</text>
+      <view class='flex-item1 phone'>{{phone}}</view>
+    </view>
+    <view class='flex'>
+      <view class='wopwer flex-item1 text-over-flow'>{{address}}</view>
+    </view>
+  </view>
+  <image src='../../images/appointment/bg-address.png' class='ct'></image>
+  <template is='progress' data='{{isNew}}'></template>
+  <picker mode="multiSelector" range='{{timeRangeAry}}' range-key='label' bindchange='setTime' bindcolumnchange='bindcolumnchange'>
+    <view class='visit-time flex mgb pad25'>
+    <view class='title'>上门时间</view>
+    <view class='time-wrp bold'>
+      <view class='time'>
+        <text>{{optionalDate}}</text><text>{{optionalTime}}</text>
+      </view>
+    </view>
+    <image src='../../images/appointment/arrowright.png' class='arrow'></image>
+  </view>
+  </picker>
+  <view class='recy-list-wrp'>
+    <view class='head flex bor-e5 pad25'>
+      <view class='flex-item1 flex'>回收清单</view>
+      <view class='flex-item1 flex t-center' wx:if="{{recyCartAry.length}}">预估积分</view>
+      <view class='flex-item1 flex t-center' wx:if="{{recyCartAry.length}}" bindtap='goon'>
+        <text class='tips'>继续添加</text>
+        <image src='../../images/appointment/icon-add.png'></image>
+      </view>      
+    </view>
+    <view class='content bor-e5'>
+      <view class='recy-content-wrp' wx:if="{{recyCartAry.length}}">
+        <block wx:for='{{recyCartAry}}'>
+          <view class='list-item flex'>
+            <text class='name bold flex-item1'>{{item.second.typeRule === 1 ? item.second.label : item.first.label}}</text>
+            <text class='integral flex-item1'>{{item.second.typeValue}}</text>
+            <image src='../../images/appointment/icon-reduce.png' data-index='{{index}}' data-typeValue='{{item.second .typeValue}}' bindtap='reduce'></image>
+          </view>
+        </block>    
+      </view>
+      <view wx:else class='recy-empty-wrp flex'>
+        <view class='add-recy-btn flex ripple' bindtap='toShowRecyOption'>立即添加</view>
+        <view class='tips'>请添加您需要上门回收的物品</view>
+      </view>
+    </view>
+    <view class='remark' wx:if="{{!isMask}}">
+      <textarea value='{{typeNote}}' style='width:100%' bindinput='textAreaInput' placeholder="留言备注   可描述物品状态，特殊要求等" placeholder-style='font-size: 30rpx;color:#999999; z-index: 1'></textarea>
+    </view>
+  </view>
+  <view class='sub-wrp flex' wx:if="{{recyCartAry.length}}">
+    <view class='sub-info'>
+      <text class='num bold'>{{expectIntegral}}</text><text class='word'>预估积分</text>
+      <view class='tips'>(实际积分以上门评估为准)</view>
+    </view>
+    <view class='sub-btn flex bold flex-item1 ripple' bindtap='sure'>确认预约</view>    
+  </view>
+</view>
+<navigator url='../makeRecord/makeRecord'>
+  <view class='bowelrjt'>
+    <view class='qpamertt ripple'>
+      预约记录
+    </view>
+  </view>
+</navigator>

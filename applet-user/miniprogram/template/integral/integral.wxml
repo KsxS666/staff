@@ -1,0 +1,46 @@
+<template name='integral-card'>
+  <view class='integral-info-card'>
+    <image src='../../images/myIntegral/xz.png'></image>
+    <view class='left'>
+      <view class='s-size'>可用积分</view>
+      <view class='bold'>{{integral}}</view>
+    </view>
+    <view class='right relative flex-item1' wx:if='{{needIntegral}}'>
+      <view class='gain s-size'>再获得<text class='bold relative'>{{needIntegral}}</text>积分就可以免费领礼品啦</view>
+    </view>
+    <view class='download-tip {{needIntegral? "rac" : ""}}'>可下载分类之家App兑换商品</view>    
+  </view>
+</template>
+<template name='integral-detail'>
+  <view class='integral-detail'>
+    <view class='card-green-border-title bold'><text class='title-name'>积分明细</text></view>
+    <view class='filter-wrp flex'>
+      <view>
+        <view class='sheet-btn flex' bindtap='showFilterSheet'><text>{{tapName}}</text><text class='arrow-bottom'></text></view>
+      </view>
+      <view class='detail-all-count'>
+        <view class='mgr60'>
+          <text class='mgr30'>获取</text><text>{{getIntegral}}</text>
+        </view>
+        <view>
+          <text class='mgr30'>使用</text><text>{{useIntegral}}</text>
+        </view>
+        <view></view>        
+      </view>
+      
+    </view>
+    <view class='content' wx:if='{{integralRecordList.length}}'>
+      <block wx:for='{{integralRecordList}}' wx:key='{{index}}'>
+        <view class='flex item'>
+          <view><text class='bold'>{{item.operateName}}</text><text class='time'>{{item.createTime}}</text></view>
+          <view wx:if='{{item.operateIntegral > 0}}' class='add-style'>+{{item.operateIntegral}}</view>
+          <view wx:elif='{{item.operateIntegral < 0}}'>{{item.operateIntegral}}</view> 
+          <view wx:else>0</view>         
+        </view>
+      </block>
+    </view>
+    <view wx:else class='empty-wrp'>暂无数据~</view>
+    <view hidden='{{!isLoading}}' class='over bac-f'>正在加载...</view>
+    <view wx:if='{{integralRecordList.length && isOver}}' class='over'>已加载完毕</view>
+  </view>
+</template>

@@ -1,0 +1,40 @@
+<!--pages/nearbyList/nearbyList.wxml-->
+<block wx:for='{{dataList}}'  wx:for-item='i' wx:for-index='iIndex' wx:key='{{iIndex}}'>
+  <view class='list-item bac-f mgt20'>
+    <view class='type-wrp bor-e5'>
+      <block wx:if='{{i.type === 1}}' wx:for='{{i.barrelList}}' wx:for-item='j' wx:for-index='jIndex'  wx:key='{{jIndex}}'>
+        <view class='type-item flex'>
+          <image src='{{j.typeListImg}}'></image>
+          <text class='mgt10'>{{j.typeName}}</text>
+        </view>
+      </block>
+      <view wx:if='{{i.type!==1}}' class='flex'>
+        <view class='type-item flex'>
+          <image src='../../images/nearby/js.png'></image>
+          <text class='mgt10'>金属</text>
+        </view>
+        <view class='type-item flex'>
+          <image src='../../images/nearby/sl.png'></image>
+          <text class='mgt10'>塑料</text>
+        </view>
+        <view class='type-item flex'>
+          <image src='../../images/nearby/yf.png'></image>
+          <text class='mgt10'>衣服</text>
+        </view>
+        <view class='type-item flex'>
+          <image src='../../images/nearby/zz.png'></image>
+          <text class='mgt10'>纸张</text>
+        </view>
+        <view class='type-item flex'>
+          <image src='../../images/nearby/bl.png'></image>
+          <text class='mgt10'>有害</text>
+        </view>
+      </view>
+    </view>
+    <view class='location-wrp flex'>
+      <image src='{{i.type === 1? "../../images/nearby/1.png" : "../../images/nearby/6.png"}}' class='mgr20'></image>
+      <text>{{i.address}}</text>
+    </view>
+  </view>
+</block>
+

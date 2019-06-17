@@ -1,0 +1,41 @@
+<view>
+  <view class='woermt'>
+    <view class='woander flex'>
+      <scroll-view scroll-x class='qrcode-type-scroll'>
+        <block wx:for='{{dataList}}' wx:key='{{index}}'>
+          <view class="qrcode-type-item {{active==index?'active':''}}" bindtap="toVote" key="{{index}}" data-id="{{index}}">
+            <image src='{{item.chartImg}}'></image>
+            <text>{{item.name}}</text>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+  <view class='qrcode-wrp'>
+    <canvas class='canvas' canvas-id='canvas' bindlongtap='save' style='width: 226px;height:229px;'></canvas>
+    <view class='tips'>
+      <view>{{typeName}}二维码</view>
+      <view>请将二维码对准扫码口</view>    
+    </view>
+  </view>
+</view>
+<view class='flex df'>
+  <image src='../../images/common/bottom-bac.png' class='bottom-bac'></image>
+  <view class="nav_container bpamet flex-item1" bindtap='myurl'>
+    <view>
+      <image src='../../images/index/home.png'></image>
+    </view>
+    <view>首页</view>
+  </view>
+  <view class="nav_container ertver flex-item1" bindtap='roalert'>
+    <view class='wqloeert flex'>
+      <image src='../../images/index/round2.png'></image>
+    </view>
+  </view>
+  <view class="nav_container myusert flex-item1" bindtap='user'>
+    <view>
+      <image src='../../images/index/user.png'></image>
+    </view>
+    <view>个人中心</view>
+  </view>
+</view>

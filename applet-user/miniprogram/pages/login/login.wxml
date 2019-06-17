@@ -1,0 +1,36 @@
+<!--pages/login/login.wxml-->
+<import src='../../template/login/login.wxml' />
+<template is='greeting'></template>
+<form bindsubmit="formSubmit" bindreset="formReset" class='form'>
+  <view class='all-input-wrp' wx:if='{{loginType === 1}}'>
+    <view class="section section_gap">
+      <input bindinput='bindPhoneInput' name='phone' type='number' placeholder='请输入手机号' placeholder-style='color:#C3C1C1;font-size:30rpx'></input>
+    </view>
+    <view class="section section_gap phone-code flex">
+      <input name='code' type='number' class='phoneCode-input' placeholder='请输入短信验证码' placeholder-style='color:#C3C1C1;font-size:30rpx'></input>
+      <button class='send-phoneCode-btn' bindtap='checkPhone' disabled='{{disabled}}'>{{disabled? second: "发送验证码"}}</button>
+    </view>
+  </view>
+  <view wx:else>
+    <view class="section section_gap">
+      <input bindinput='bindPhoneInput' name='username' placeholder='请输入手机号/用户名' placeholder-style='color:#C3C1C1;font-size:30rpx'></input>
+    </view>
+    <view class="section section_gap">
+      <input bindinput='bindPhoneInput' type='password' name='password' placeholder='登录密码' placeholder-style='color:#C3C1C1;font-size:30rpx'></input>
+    </view>
+  </view>
+  <button form-type="submit" class='subb-btn' hover-class='hover-class'>登录</button>
+</form>
+<view class='else-in-tips tips'>
+  <text bindtap='toPas' wx:if='{{loginType === 1}}'>账号密码登录</text>
+  <text bindtap='toPhone' wx:else>手机快捷登录或注册</text>  
+  <navigator wx:if='{{loginType === 2}}' url='/pages/forget/forget' hover-class='none'>忘记密码？</navigator>  
+</view>
+<view class='else-in-weChat column-wrp'>
+  <text class='tips'>其他方式登录</text>
+  <image class='weChat-image ripple' src='../../images/login/wechat2.png' bindtap='getWxAuthorCode'></image>
+</view>
+<view class='go-regist column-wrp'>
+  <view class='tips'>还没有注册账号？</view>
+  <view class='go-regist-btn ripple' bindtap='goRegist'>快速注册</view>
+</view>

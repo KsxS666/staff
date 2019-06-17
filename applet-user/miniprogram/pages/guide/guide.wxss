@@ -1,0 +1,7 @@
+/* pages/guide/guide.wxss */
+
+page {
+  padding: 40rpx;
+  background: #fff;
+  width: auto;
+}

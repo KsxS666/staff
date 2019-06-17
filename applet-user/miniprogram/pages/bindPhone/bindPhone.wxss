@@ -1,0 +1,8 @@
+/* pages/bindPhone/bindPhone.wxss */
+page{
+  background: #ffffff;
+  padding: 100rpx 30rpx 0 30rpx;
+  width: auto;
+  display: flex;
+  flex-flow: column;
+}

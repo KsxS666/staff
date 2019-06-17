@@ -1,0 +1,58 @@
+<view>
+
+  <view class='mnwoertn'>
+    <form bindsubmit='searchBox' report-submit>
+      <view class='lommd'>
+        <view class='flex palerkt'>
+          <view class='caoernt bold'>姓名</view>
+          <view class='qpelret'>
+            <input type='text' bindinput='nameInput' placeholder-class="phcolor" placeholder='请输入真实姓名' name="name" value='{{name}}'></input>
+          </view>
+        </view>
+        <view class='flex palerkt'>
+          <view class='caoernt bold'>手机</view>
+          <view class='qpelret'>
+            <text>{{phone}}</text>
+          </view>
+        </view>
+        <view class='flex palerkt'>
+          <view class='caoernt bold'>住址</view>
+          <view class='qpelret flex' bindtap='showActionSheet'>
+            <text wx:if="{{addres!=''}}">{{addres}}</text>
+            <text class='phcolor' wx:if="{{addres==''}}">请选择地址</text>
+          </view>
+            <image src='../../images/common/arrrit.png' class='wlaonet'></image>
+
+        </view>
+        <!-- <view class='flex palerkt' bindtap='showActionSheet'>
+          <view class='caoernt bold' >住址</view>
+          <view class='flex-item1 text-over-flow'>
+            <text wx:if="{{addres!=''}}">{{addres}}010101</text>
+            <text class='phcolor' wx:if="{{addres==''}}">请选择地址</text>
+          </view>
+          <view class='wlaonet'>
+            <image src='../../images/common/arrrit.png'></image>
+          </view>
+        </view> -->
+        <!-- <view class='flex' style='padding:10rpx 10rpx 10rpx 0'>
+          <view class='caoernt bold' style='width:339rpx;'>是否绑定家庭</view>
+          <view class='qpelret'>
+            <view class='soamert'>
+            </view>
+          </view>
+          <view class='wlaonet'>
+            <switch class="tui-fr" checked="{{isChecked1}}" bindchange="changeSwitch1" />
+          </view>
+        </view> -->
+      </view>
+      <!-- <view class='flex coept' bindtap='selectChenke'>
+        <view class='yoamler'>
+          <view class='notChenke' wx:if="{{selectChenak==false}}"></view>
+          <view class='chenke' wx:if="{{selectChenak}}"></view>
+        </view>
+        <view class='woamert'>同意绑定《住址协议》</view>
+      </view> -->
+      <button class='sumoaenrt' bindsubmit='searchBox' formType='submit'>修改</button>
+    </form>
+  </view>
+</view>

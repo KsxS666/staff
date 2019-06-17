@@ -1,0 +1,28 @@
+<import src='../../template/index/index.wxml' />
+<view class='derpotm'>
+  <template is='banner' data='{{bannerList}}'></template>
+  <template is='midNav'></template>
+  <template is='hot'></template>
+  <template is='commonweal' data='{{integral, equipmentTotalCast, cumulativeIntegral}}'></template>
+  <template is='nearby' data='{{nearbyList}}'></template>  
+</view>
+<view class='flex df'>
+  <image src='../../images/common/bottom-bac.png' class='bottom-bac'></image>
+  <view class="nav_container bpamet flex-item1">
+    <view>
+      <image src='../../images/index/home-active.png'></image>
+    </view>
+    <view class='vacpaemt'>首页</view>
+  </view>
+  <view class="nav_container ertver flex-item1" bindtap='roalert'>
+    <view class='wqloeert flex'>
+      <image src='../../images/index/round2.png'></image>
+    </view>
+  </view>
+  <view class="nav_container myusert flex-item1" bindtap='myurl'>
+    <view>
+      <image src='../../images/index/user.png'></image>
+    </view>
+    <view>个人中心</view>
+  </view>
+</view>

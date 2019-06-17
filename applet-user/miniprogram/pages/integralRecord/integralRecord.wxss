@@ -1,0 +1,54 @@
+/* pages/integralRecord/integralRecord.wxss */
+.first{
+  background: #ffffff;
+  margin-bottom: 20rpx;
+  padding: 0 30rpx 30rpx 30rpx;
+  display: flex;
+  flex-flow: column
+}
+.filter-wrp{
+  height: 100rpx;
+  justify-content: space-between;
+  padding: 0 25rpx;
+  font-size: 28rpx;  
+}
+.sheet-btn{
+  width: 135rpx;
+  height: 55rpx;
+  border-radius: 30rpx;
+  justify-content: center;
+  background: #ffffff
+}
+.detail-all-count{
+  color: #666666
+}
+.detail-all-count view{
+  display: inline-block
+}
+.integral-detail .content{
+  padding: 0 25rpx;
+  background: #ffffff
+}
+.integral-detail .content .item{
+  justify-content: space-between;
+  height: 120rpx;
+  font-size: 30rpx;
+}
+.integral-detail .content .item:not(:last-child){
+  border-bottom: 1px solid #e5e5e5
+}
+.integral-detail .content .item view:nth-child(1){
+  display: flex;
+  flex-flow: column;
+}
+.integral-detail .content .item .time{
+  color: #666666;
+  font-size: 28rpx;
+  margin-top: 16rpx;
+}
+.integral-detail .empty-wrp{
+  height: 200rpx;
+}
+.echarts-container{
+  height: calc(100% - 106rpx)
+}

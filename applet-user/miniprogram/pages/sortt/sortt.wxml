@@ -1,0 +1,25 @@
+<!--pages/sortt/sortt.wxml-->
+<scroll-view class='left-bar' scroll-y>
+  <block wx:for='{{dataList}}' wx:key='{{index}}'>
+    <view class='item bold {{current === index ? "active" : ""}}' data-index='{{index}}' bindtap='leftTap'>{{item.name}}</view>
+  </block>
+
+  
+</scroll-view>
+<scroll-view class='right-content bac-f flex-item1' scroll-y>
+  <view class='notice-wrp' wx:if='{{tipArr.length}}'>
+    <view>*注意</view>
+  
+    <block wx:for='{{tipArr}}' wx:key='{{index}}' >
+      <view><text>{{index+1}}、</text><text>{{item}}</text></view>
+    </block>
+  </view>
+  <view class='content-wrp'>
+    <block wx:for='{{rightList}}' wx:key='{{index}}'>
+      <view class='item'>
+        <image src='{{item.img}}'></image>
+        <view class='name'>{{item.name}}</view>
+      </view>
+    </block>
+  </view>
+</scroll-view>

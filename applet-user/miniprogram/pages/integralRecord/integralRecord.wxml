@@ -1,0 +1,13 @@
+<!--pages/integralRecord/integralRecord.wxml-->
+<import src='../../template/integral/integral.wxml' />
+<view class='first'>
+  <template is='integral-card' data='{{integral, needIntegral}}'></template>
+</view>
+  <view class='pie-echarts-wrp'>
+    <view class='card-green-border-title bold'><text class='title-name'>累计积分</text></view>
+    <view class="echarts-container" hidden='{{noPie}}'>
+      <ec-canvas id="mychart-dom-pie" canvas-id="mychart-pie" ec="{{ ec }}"></ec-canvas>
+    </view>
+    <view hidden='{{!noPie}}' class='empty-wrp echarts-container'>暂无数据~</view> 
+  </view>
+<template is='integral-detail' data='{{integralRecordList, tapName, getIntegral, useIntegral ,isLoading, isOver}}'></template>

@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/index/index",    
+    "pages/login/login",
+    "pages/sortt/sortt",
+    "pages/setNewPassword/setNewPassword",
+    "pages/binding/binding",
+    "pages/selectaddress/selectaddress",
+    "pages/make/make",
+    "pages/nearby/nearby",
+    "pages/authorize/authorize",
+    "pages/forgetCode/forgetCode",
+    "pages/forget/forget",
+    "pages/forgetPassword/forgetPassword",
+    "pages/integralRecord/integralRecord",
+    "pages/rank/rank",
+    "pages/cast/cast",
+    "pages/nearbyList/nearbyList",
+    "pages/bindPhone/bindPhone",
+    "pages/myIntegal/myIntegal",
+    "pages/qrcode/qrcode",
+    "pages/makeDetails/makeDetails",
+    "pages/makeRecord/makeRecord",
+    "pages/register/register",
+    "pages/guide/guide",
+    "pages/my/my"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "允许分类之家获取您的位置信息"
+    }
+  },
+  "window": {
+    "backgroundColor": "#ffffff",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black"
+  }
+}

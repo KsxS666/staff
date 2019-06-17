@@ -1,0 +1,41 @@
+<template name='recy-dialog'>
+  <view class='recy-dialog {{isOption ? "isOption" : ""}}'>
+    <view class='top'>
+      <text>添加废品</text>
+      <image src='../../images/appointment/close.png' class='close' bindtap='toHideRecyOption'></image>
+    </view>
+    <view class='mid flex-item1' wx:if='{{levelAry1.length}}'>
+      <view class='first-level flex-item1'>
+        <view class='flex'>
+          <block wx:for='{{levelAry1}}' wx:key="{{index}}">
+            <text class='{{levelIndex1 === index ? "bold" : ""}}' bindtap='typeSwitch' data-index='{{index}}'>{{item.label}}</text>
+          </block>
+        </view>
+        <view class='tips'>五公斤以上纸类、纺织物、金属、塑料等废品</view>
+      </view>
+      <view class='second-level flex-item1'>
+        <view class='title'>物品</view>
+        <view class='content'>
+         <block wx:for='{{levelAry2}}' wx:key="{{index}}">
+          <view class='item {{levelIndex2 === index ? "item-active" : ""}}' bindtap='toShowSpec' data-index='{{index}}'>{{item.label}}</view>
+         </block>
+        </view>
+      </view>
+      <view class='third-level flex-item1'>
+        <view class='title'>规格</view>
+        <view class='content'>
+          <block wx:for='{{levelAry3}}' wx:key="{{index}}">
+            <view class='item {{levelIndex3 === index ? "item-active" : ""}}' bindtap='specSwitch' data-index='{{index}}'>{{item.label}}</view>
+          </block>
+        </view>
+      </view>
+    </view>
+    <view wx:else class='mid flex-item1'>暂无数据</view>
+    <view class='bottom flex'>
+      <view class='sub-info flex'>
+        <text class='num bold'>{{estimate}}</text><text class='word'>预估回收积分</text>
+      </view>
+      <view class='sub-btn flex bold flex-item1 ripple' bindtap='addToList'>加入回收清单</view>  
+    </view>
+  </view>
+</template>

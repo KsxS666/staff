@@ -1,0 +1,2 @@
+<!--pages/authorize/authorize.wxml-->
+<button open-type='openSetting'>打开权限</button>

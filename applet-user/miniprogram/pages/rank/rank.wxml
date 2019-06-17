@@ -1,0 +1,111 @@
+<!--pages/rank/rank.wxml-->
+<view class='blue-top'>
+  <view class='rank-wrp flex flex-item1'>
+    <view class='title'>{{userInfo.name}}在{{optionStaticList[current]}}{{(current === 0 || current === 1)? "社区榜" : ""}}</view> 
+    <view class='desc-img'>
+    <view class='inside'>
+      <view wx:if='{{rankNum > 0}}'>第 <text class='bold'>{{rankNum}}</text> 名</view>
+      <view wx:else class='no-rank'>无排名</view>
+    </view>
+    <image src='../../images/rank/cd.png' mode='widthFit'></image></view>
+    <view class='date'>数据更新至 <text>{{updataTime}}:00</text></view>
+  </view>
+  <view class='option-wrp flex'>
+    <block wx:for='{{optionStaticList}}' wx:key='{{index}}'>
+      <view class='ripple' bindtap='switchCard' data-index='{{index}}'>{{item}}<text class='active' wx:if='{{index === current}}'></text></view>
+    </block>
+  </view>
+</view>
+<view class='content'>
+  <swiper bindchange='bindchange' current='{{currentIndex}}'>
+    <swiper-item>
+      <scroll-view scroll-y wx:if='{{dataList1.length}}' bindscrolltolower='toBottom' lower-threshold='0'>
+        <block wx:for='{{dataList1}}' wx:key='{{index}}'>
+          <view class='item flex'>
+            <view>
+              <image src='../../images/rank/1.png' class='rank' wx:if='{{index === 0}}'></image>
+              <image src='../../images/rank/2.png' class='rank' wx:elif='{{index === 1}}'></image>
+              <image src='../../images/rank/3.png' class='rank' wx:elif='{{index === 2}}'></image>
+              <text wx:else class='rank bold'>{{index+1}}</text>        
+            </view>
+            <view class='text-over-flow'><text class='bold name'>{{item.name}}</text></view>
+            <view class='flex-item1'>
+              <text class='goal-num bold'>{{item.cumulativeIntegral}}</text>
+              <image src='../../images/rank/jinbi.png' class='goal'></image>
+            </view>
+          </view>
+        </block>
+        <view hidden='{{!isLoading1}}' class='over bac-f'>正在加载...</view>
+        <view wx:if='{{dataList1.length && isOver1}}' class='over'>已加载完毕</view>
+      </scroll-view>
+      <view class='empty-wrp' wx:else>暂无排名记录~</view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view scroll-y wx:if='{{dataList2.length}}' bindscrolltolower='toBottom' lower-threshold='0'>
+        <block wx:for='{{dataList2}}' wx:key='{{index}}'>
+          <view class='item flex'>
+            <view>
+              <image src='../../images/rank/1.png' class='rank' wx:if='{{index === 0}}'></image>
+              <image src='../../images/rank/2.png' class='rank' wx:elif='{{index === 1}}'></image>
+              <image src='../../images/rank/3.png' class='rank' wx:elif='{{index === 2}}'></image>
+              <text wx:else class='rank bold'>{{index+1}}</text> 
+            </view>
+            <view class='text-over-flow'><text class='bold name'>{{item.name}}</text></view>
+            <view class='flex-item1'>
+              <text class='goal-num bold'>{{item.cumulativeIntegral}}</text>
+              <image src='../../images/rank/jinbi.png' class='goal'></image>
+            </view>
+          </view>
+        </block>
+        <view hidden='{{!isLoading2}}' class='over bac-f'>正在加载...</view>
+        <view wx:if='{{dataList2.length && isOver2}}' class='over'>已加载完毕</view>
+      </scroll-view>
+      <view class='empty-wrp' wx:else>暂无排名记录~</view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view scroll-y wx:if='{{dataList3.length}}' bindscrolltolower='toBottom' lower-threshold='0'>
+        <block wx:for='{{dataList3}}' wx:key='{{index}}'>
+          <view class='item flex'>
+            <view>
+              <image src='../../images/rank/1.png' class='rank' wx:if='{{index === 0}}'></image>
+              <image src='../../images/rank/2.png' class='rank' wx:elif='{{index === 1}}'></image>
+              <image src='../../images/rank/3.png' class='rank' wx:elif='{{index === 2}}'></image>
+              <text wx:else class='rank bold'>{{index+1}}</text> 
+            </view>
+            <view class='text-over-flow'><text class='bold name'>{{item.name}}</text></view>
+            <view class='flex-item1'>
+              <text class='goal-num bold'>{{item.cumulativeIntegral}}</text>
+              <image src='../../images/rank/jinbi.png' class='goal'></image>
+            </view>
+          </view>
+        </block>
+        <view hidden='{{!isLoading3}}' class='over bac-f'>正在加载...</view>
+        <view wx:if='{{dataList3.length && isOver3}}' class='over'>已加载完毕</view>
+      </scroll-view>
+      <view class='empty-wrp' wx:else>暂无排名记录~</view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view scroll-y wx:if='{{dataList4.length}}' bindscrolltolower='toBottom' lower-threshold='0'>
+        <block wx:for='{{dataList4}}' wx:key='{{index}}'>
+          <view class='item flex'>
+            <view>
+              <image src='../../images/rank/1.png' class='rank' wx:if='{{index === 0}}'></image>
+              <image src='../../images/rank/2.png' class='rank' wx:elif='{{index === 1}}'></image>
+              <image src='../../images/rank/3.png' class='rank' wx:elif='{{index === 2}}'></image>
+              <text wx:else class='rank bold'>{{index+1}}</text> 
+            </view>
+            <view class='text-over-flow'><text class='bold name'>{{item.name}}</text></view>
+            <view class='flex-item1'>
+              <text class='goal-num bold'>{{item.cumulativeIntegral}}</text>
+              <image src='../../images/rank/jinbi.png' class='goal'></image>
+            </view>
+          </view>
+        </block>
+        <view hidden='{{!isLoading4}}' class='over bac-f'>正在加载...</view>
+        <view wx:if='{{dataList4.length && isOver4}}' class='over'>已加载完毕</view>
+      </scroll-view>
+      <view class='empty-wrp' wx:else>暂无排名记录~</view>
+    </swiper-item>
+    
+  </swiper>
+</view>

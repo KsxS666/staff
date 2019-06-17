@@ -1,0 +1,117 @@
+/* pages/rank/rank.wxss */
+page{
+  background: #ffffff;
+  height: 100%;
+}
+.blue-top{
+  height: 420rpx;
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  color: #ffffff;
+  font-size: 26rpx;
+}
+.blue-top .rank-wrp{
+  background: linear-gradient(to right, #3598FD, #47B9F0, #54C6E3);
+  flex-flow: column;
+  position: relative
+}
+.blue-top .rank-wrp image{
+  height: 240rpx;
+}
+.blue-top .rank-wrp .date{
+  font-size: 24rpx;
+  position: absolute;
+  bottom: 6rpx;
+  right: 24rpx;
+  opacity: 0.8
+}
+.blue-top .rank-wrp .title{
+  position: relative;
+  top: 80rpx;
+  opacity: 0.82
+}
+.blue-top .rank-wrp .desc-img{
+  position: relative
+}
+.blue-top .rank-wrp .desc-img .inside{
+  position: absolute;
+  left: 52%;
+  top: 44%;
+  transform: translate(-50%);
+  font-size: 46rpx;
+}
+.blue-top .rank-wrp .desc-img .inside .bold{
+  font-size: 56rpx;
+}
+.blue-top .option-wrp{
+  height: 98rpx;
+  background: linear-gradient(to right, #3598FD, #47B9F0, #54C6E3);
+  opacity: 0.78;
+  z-index: 2
+}
+.blue-top .option-wrp view{
+  height: 100%;
+  flex: 1;
+  line-height: 98rpx;
+  text-align: center;
+  font-size: 30rpx;
+  position: relative
+}
+.blue-top .option-wrp text.active:after{
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 10rpx solid transparent;
+  border-right: 10rpx solid transparent;
+  border-bottom: 18rpx solid #ffffff;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%)
+}
+.content{
+  height: calc(100% - 420rpx)
+}
+.content .item{
+  height: 180rpx;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0 30rpx;
+}
+.content .item view:nth-child(1){
+  width: 200rpx;
+}
+.content .item view:nth-child(3){
+  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end
+}
+swiper{
+  height: 100%
+}
+scroll-view{
+  height: 100%
+}
+image.rank{
+  width: 96rpx;
+  height: 96rpx;
+}
+text.rank{
+  color: #999999;
+  font-size: 40rpx;
+  margin-left: 25rpx;
+}
+image.goal{
+  width: 44rpx;
+  height: 44rpx;
+}
+.goal-num{
+  color: #FFAB4A;
+  font-size: 40rpx;
+  margin-right: 10rpx;
+}
+.no-rank{
+  position: relative;
+  top: 6rpx;
+}

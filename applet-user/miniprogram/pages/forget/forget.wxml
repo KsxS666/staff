@@ -1,0 +1,8 @@
+<!--pages/forget/forget.wxml-->
+<view class='wrp bac-f'>
+  <view class='b-title bold'>找回密码</view>
+  <view class='phone-input-wrp'>
+    <input type='number' bindinput='phoneInput' placeholder='请输入手机号' placeholder-class='phcolor' class='bor-e5'></input>
+  </view>
+  <button class='get-phonecode-btn bold {{disabled ? "" : "isActive" }}' disabled='{{disabled}}' bindtap='getPhoneCode'>获取验证码</button>
+</view>

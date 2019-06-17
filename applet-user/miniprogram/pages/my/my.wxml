@@ -1,0 +1,68 @@
+<!--pages/my/my.wxml-->
+
+<view class='user-info-card pad30'>
+  <view class='first flex flex-item1'>
+    <view class='name-sign'>
+      <text class='name bold'>{{userInfo.name}}</text>
+      <text class='sign'>垃圾分类就是新时尚</text>      
+    </view>
+    <view class='ava-wrp'>
+      <open-data class='ava' mode='aspeecFit' type='userAvatarUrl'></open-data>
+    </view>
+  </view>
+  <view class='flex-item1 flex'>
+    <view class='commonweal-item-wrp  flex-item1'>
+      <view class='commonweal-item'>
+        <text class='num'>{{integral}}</text>
+        <view>
+          <text class='tips mgt30'>当前积分</text>
+        </view>
+      </view>
+      <view class='commonweal-item'>
+        <text class='num'>{{equipmentTotalCast}}</text>   
+        <view>
+          <text class='tips mgt30'>投递次数</text>
+        </view>   
+      </view>
+      <view class='commonweal-item flex-item1'>
+        <text class='num'>{{cumulativeIntegral}}</text>  
+        <view>
+          <text class='tips mgt30'>累计积分</text>
+        </view>    
+      </view>
+      
+    </view> 
+  </view>
+
+</view>
+<view class='option-wrp bold'>
+  <navigator class='option-item flex' url='/pages/binding/binding' hover-class='none'>
+    <text>绑定地址</text>  
+    <image src='../../images/my/dizhi @2x.png'></image>
+  </navigator>
+  <view class='option-item flex' bindtap='toCall'>
+    <text>电话客服</text>  
+    <image src='../../images/my/kefu @2x.png'></image>
+  </view>
+</view>
+<view class='logout ripple bac-f flex bold' bindtap='logOut'>退出登录</view>
+<view class='flex df'>
+  <image src='../../images/common/bottom-bac.png' class='bottom-bac'></image>
+  <view class="nav_container bpamet flex-item1" bindtap='myurl'>
+    <view>
+      <image src='../../images/index/home.png'></image>
+    </view>
+    <view>首页</view>
+  </view>
+  <view class="nav_container ertver flex-item1" bindtap='roalert'>
+    <view class='wqloeert flex'>
+      <image src='../../images/index/round2.png'></image>
+    </view>
+  </view>
+  <view class="nav_container myusert flex-item1" bindtap='user'>
+    <view>
+      <image src='../../images/index/user-active.png'></image>
+    </view>
+    <view class='vacpaemt'>个人中心</view>
+  </view>
+</view>

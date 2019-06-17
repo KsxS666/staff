@@ -1,0 +1,15 @@
+<!--pages/bindPhone/bindPhone.wxml-->
+<import src='../../template/login/login.wxml' />
+<template is='greeting'></template>
+<form bindsubmit="formSubmit" bindreset="formReset" class='form'>
+  <view class='all-input-wrp'>
+    <view class="section section_gap">
+      <input bindinput='bindPhoneInput' name='phone' type='number' placeholder='请输入手机号' placeholder-style='color:#C3C1C1;font-size:30rpx'></input>
+    </view>
+    <view class="section section_gap phone-code flex">
+      <input name='code' class='phoneCode-input' placeholder='请输入短信验证码' placeholder-style='color:#C3C1C1;font-size:30rpx'></input>
+      <button class='send-phoneCode-btn' bindtap='checkPhone' disabled='{{disabled}}'>{{disabled? second: "发送验证码"}}</button>
+    </view>
+  </view>
+   <button form-type="submit" class='subb-btn' hover-class='hover-class'>立即绑定</button>
+</form>

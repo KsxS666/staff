@@ -1,0 +1,43 @@
+<!--pages/cast/cast.wxml-->
+<view class='times-weight-card bac-f mgb20 flex'>
+  <view class='flex-item1 card-item relative'>
+    <view class='title tips'>累计投放次数</view>
+    <view class='bold'><text class='mgr20 num'>{{equipmentTotalCast}}</text><image src='../../images/cast/times.png'></image></view>    
+  </view>
+  <view class='flex-item1 card-item'>
+    <view class='title tips'>累计投放重量</view>
+    <view class='bold'><image src='../../images/cast/kg.png' class='mgr20'></image><text class='num'>{{equipmentTotalWeight}}</text></view>  
+  </view>  
+</view>
+<view class='pie-echarts-wrp'>
+  <view class='card-green-border-title bold'><text class='title-name'>累计投放重量</text></view>
+  <view class="echarts-container" hidden='{{noPie}}'>
+    <ec-canvas id="mychart-dom-pie" canvas-id="mychart-pie" ec="{{ ec }}"></ec-canvas>
+  </view>
+  <view hidden='{{!noPie}}' class='empty-wrp echarts-container'>暂无数据~</view>    
+</view>
+<view class='cast-record-wrp'>
+  <view class='card-green-border-title bold'><text class='title-name'>投放记录</text><view class='fr sheet-btn flex' bindtap='showSheet'><text class='mgr20'>{{tapName}}</text><text class='arrow-bottom'></text></view></view>
+  <view class='cast-record-content bac-f'>
+    <view wx:if='{{castList.length}}'>
+      <block wx:for='{{castList}}' wx:key='{{index}}'>
+        <view class='record-item bor-e5'>
+          <view class='flex'>
+            <!-- <image src='{{item}}'></image> -->
+            <view class='double'><text class='name bold'>投放{{item.typeName}}</text><text class='integral mgt10'>{{item.integral}}积分</text></view>
+          </view>
+          <view class='right-double'>
+            <text class='weight'>{{item.weight/1000}}kg</text>
+            <text class='tips mgt10' wx:if='{{item.inspectionStatus === 0}}'>待巡检</text>
+            <text class='tips mgt10' wx:if='{{item.inspectionStatus === 1}}'>已巡检</text>
+            <text class='tips mgt10' wx:if='{{item.inspectionStatus === 2}}'>不通过</text>
+          </view>
+        </view>
+      </block>
+    </view>
+
+    <view wx:else class='empty'><image src='../../images/cast/empty.png' mode='widthFit'></image><text class='tips'>暂无记录~</text></view>
+  </view>
+    <view hidden='{{!isLoading}}' class='over bac-f'>正在加载...</view>
+    <view wx:if='{{castList.length && isOver}}' class='over'>已加载完毕</view>
+</view>

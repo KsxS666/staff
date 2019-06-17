@@ -1,0 +1,26 @@
+<!--pages/makeRecord/makeRecord.wxml-->
+<view class='data-wrp'>
+  <block wx:for='{{dataList}}' wx:key='{{index}}'>
+    <navigator url='/pages/makeDetails/makeDetails?id={{item.id}}&stateCode={{item.stateCode}}' hover-class='none'>
+      <view class='item'>
+        <view class='item-default item-first bor-e5'>
+          <view class='title-state flex'>
+            <text class='bold'>{{item.title}}</text>
+            <text>{{item.stateName}}</text>
+          </view>
+          <view class='appoint-time'>预约时间：{{item.appointmentTime}}</view>
+          <view wx:if='{{item.doorTime}}' class='door-time'  style="color: red">上门时间：{{item.doorTime}}</view>
+        </view>
+        <view class='item-default item-second flex-item1'>
+          <view>
+            <text class='num'>{{item.integral}}</text><text class='tips'>预估积分</text>
+          </view>
+          <view class='cancel-btn ripple' catchtap='appointCancel' data-id='{{item.id}}' wx:if='{{item.stateCode===0}}' >取消预约</view>
+        </view>  
+      </view>
+    </navigator>
+
+  </block>
+    <view hidden='{{!isLoading}}' class='over bac-f'>正在加载...</view>
+    <view wx:if='{{castList.length && isOver}}' class='over'>已加载完毕</view>
+</view>

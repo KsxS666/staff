@@ -1,0 +1,101 @@
+<!-- 首页相关模板 -->
+
+<!-- 轮播 -->
+<template name="banner">
+  <view class='slide-image fff'>
+    <swiper indicator-dots indicator-color='#d6d6d6' indicator-active-color='#ffffff' autoplay wx:if='{{bannerList.length}}'>
+      <block wx:for='{{bannerList}}' wx:key='{{index}}'>
+        <swiper-item>
+          <image src='{{item.img}}'></image>
+        </swiper-item>
+      </block>
+    </swiper>
+    <image src='../../images/common/silde.png' wx:else></image>
+  </view>
+</template>
+
+<!-- 导航 -->
+<template name="midNav">
+  <view class='vareot fff'>
+    <view class='flex'>
+      <view class='flex-item1 ret' bindtap='makeRef'>
+        <view class='vaoent'>
+          <image src='../../images/index/1.png' class='ripple'></image>
+        </view>
+        <view class='title'>预约上门</view>
+      </view>
+      <view class='flex-item1 ret' bindtap='goSort'>
+        <view class='vaoent'>
+          <image src='../../images/index/3.png' class='ripple'></image>
+        </view>
+        <view class='title'>回收分类</view>
+      </view>
+      <view class='flex-item1 ret' bindtap='goguide'>
+        <view class='vaoent'>
+          <image src='../../images/index/4.png' class='ripple'></image>
+        </view>
+        <view class='title'>新手指南</view>
+      </view>
+      <view class='flex-item1 ret' bindtap='gorank'>
+        <view class='vaoent'>
+          <image src='../../images/index/5.png' class='ripple'></image>
+        </view>
+        <view class='title'>排行榜</view>
+      </view>
+    </view>
+  </view>
+</template>
+<!-- 当前有10000人 -->
+<template name='hot'>
+  <view class='hot fff'>目前已超过30万户与您一起参与垃圾分类！</view>
+</template>
+<!-- 公益积分 -->
+<template name='commonweal'>
+  <view class='commonweal fff'>
+    <view class='title-leftGreen'>公益积分</view>
+    <view class='commonweal-item-wrp flex-item1'>
+      <navigator class='commonweal-item' hover-class='none' url='/pages/myIntegal/myIntegal'>
+        <text class='num'>{{integral}}</text>
+        <view class='flex mgt20'>
+          <text class='tips'>当前积分</text><image src='../../images/common/r.png' class='tz'></image>
+        </view>
+      </navigator>
+      <navigator class='commonweal-item' hover-class='none' url='/pages/cast/cast'>
+        <text class='num'>{{equipmentTotalCast}}</text>   
+        <view class='flex mgt20'>
+          <text class='tips'>投递次数</text><image src='../../images/common/r.png' class='tz'></image>
+        </view>   
+      </navigator>
+      <navigator class='commonweal-item flex-item1' hover-class='none' url='/pages/myIntegal/myIntegal'>
+        <text class='num'>{{cumulativeIntegral}}</text>  
+        <view  class='flex mgt20'>
+          <text class='tips'>累计积分</text><image src='../../images/common/r.png' class='tz'></image>
+        </view>    
+      </navigator>
+      
+    </view>
+  </view>
+</template>
+<!-- 附近设备类型 -->
+<template name='nearby'>
+  <view class='nearby'>
+    <view class='title-wrp100 bor-e5'>
+      <view class='title-leftGreen'>附近分类点</view>
+    </view>
+    <navigator class='near-recy-type-wrp flex-item1' url='/pages/nearby/nearby' hover-class='none'>
+      <view class='location bold'>
+        <view>
+          <image src='../../images/index/address.png' mode='widthFix'></image>
+          <text>{{nearbyList[0].address}}</text>
+        </view>     
+      </view>
+      <view class='type-item-wrp'>
+        <block wx:for='{{nearbyList[0].barrelList}}' wx:key='{{item.id}}'>
+          <view class='flex-item1'>
+            <image src='{{item.typeListImg}}'></image><text>{{item.typeName}}{{item.isFull ? "（满桶）" : ""}}</text>
+          </view>
+        </block>
+      </view>
+    </navigator>
+  </view>
+</template> 

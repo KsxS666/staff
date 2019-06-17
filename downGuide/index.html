@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta itemprop="name" content="分类之家客户端" />
+    <meta itemprop="image" content="http://ajwl.oss-cn-shenzhen.aliyuncs.com/201810191453321445634.png" />
+    <meta name="description" itemprop="description" content="垃圾分类赚积分" />
+    <script src="jq.js"></script>
+    <title>分类之家客户端</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+        .ripple{
+          position: relative;
+          overflow: hidden;
+        }
+        .ripple:after {
+          content: "";
+          display: block;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          pointer-events: none;
+          background-image: radial-gradient(circle, #666 10%, transparent 10.01%);
+          background-repeat: no-repeat;
+          background-position: 50%;
+          transform: scale(10, 10);
+          opacity: 0;
+          transition: transform .6s, opacity .6s;
+        }
+        .ripple:active:after {
+          transform: scale(0, 0);
+          opacity: .3;
+          transition: 0s;
+        }
+        .img-wrp {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('./downGuide.png') center no-repeat;
+            background-size: 100% 100%;
+            -webkit-tap-highlight-color: transparent;
+        }
+        #goDownLoad{
+          color: #ffffff;
+          width: 193px;
+          height: 43px;
+          border-radius: 36px;
+          font-size: 16px;
+          border: 0;
+          outline: 0;
+          box-shadow: 0 1px 6px #B3E922;
+          background: linear-gradient(to right, #B3E922, #9AE00A);
+          margin-top: -20px;
+        }
+        .icon{
+          width: 15px;
+          height: 15px;
+          margin-right: 6px;
+        }
+
+        .none {
+            display: none;
+        }
+
+        .weixin_tip {
+            z-index: 100;
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            filter: alpha(opacity=80);
+            height: 100%;
+            width: 100%;
+            z-index: 100;
+            justify-content: center;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .weixin_tip p {
+            text-align: center;
+            margin-top: 10%;
+            padding: 0 5%;
+            color: #ffffff
+        }
+    </style>
+</head>
+<body>
+    <div class="img-wrp none" >
+      <button type="button" id="goDownLoad" class="ripple"><img src="./download.png" class="icon"/>免费下载APP</button>
+    </div>
+    <div class="weixin_tip">
+        <p>点击右上角，选择在浏览器中打开</p>
+        <img src="./right-top.png" style="width: 60px;height: 60px">
+    </div>
+    <script>
+        $(function () {
+            
+            var androidUrl = 'http://120.42.54.21:8082/flzj.apk';
+            var u = navigator.userAgent;
+            var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+            var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+
+            if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) { //移动端
+                document.getElementsByClassName('img-wrp')[0].style.display = 'flex'
+            } else {
+                alert('请使用手机打开网页！');
+                return false;
+            }
+            var is_weixin = is_weixin();
+
+            // $.ajax({
+            //     type: 'POST',
+            //     url: 'http://120.42.54.19:10000/system/getVersion/getNewVersion',
+            //     data: { flag: 0, dataType: 0 },
+            //     method: 'POST',
+            //     success: function (res) { androidUrl = res.data.versionUrl },
+            //     dataType: 'json'
+            // });
+            document.getElementById('goDownLoad').onclick = function () {
+                if (isAndroid) {
+                    if (is_weixin) {
+                        $('.weixin_tip').addClass('flex');
+                    } else {
+                        window.open(androidUrl);
+
+                    }
+                }
+                if (isiOS) {
+                    window.open('https://itunes.apple.com/cn/app/fen-lei-zhi-jia/id1439437164?mt=8')
+                }
+            }
+            function is_weixin() {
+                var ua = navigator.userAgent.toLowerCase();
+                if (ua.match(/MicroMessenger/i) == "micromessenger") {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        })
+
+
+    </script>
+    <script>
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,145 @@
+/* pages/my/user.wxss */
+.woermt {
+  width: 100%;
+  height: 406rpx;
+  background: #24c7aa;
+  /* background: linear-gradient(to right,#19EC81,#08B3CF) */
+}
+.woander image {
+  width: 132rpx;
+  height: 132rpx;
+  border-radius: 50%;
+}
+.woander {
+  text-align: center;
+  color: white;
+  font-size: 28rpx;
+}
+.qrcode-type-scroll{
+  width: 100%;
+  display: flex;
+  white-space: nowrap;  
+  text-align: center
+}
+.qrcode-type-scroll .qrcode-type-item{
+  color: #ffffff;
+  font-size: 32rpx;
+  width: 160rpx;
+  height: 160rpx;
+  display: inline-block;
+  text-align: center;
+  opacity: 0.6;
+}
+.qrcode-type-scroll .qrcode-type-item image{
+  width: 70rpx;
+  height: 70rpx;
+}
+.qrcode-type-scroll .qrcode-type-item text{
+  display: block;
+}
+.qrcode-type-scroll .qrcode-type-item.active{
+  font-weight: bold;
+  font-size: 36rpx;
+  opacity: 1;
+}
+.userName {
+  color: white;
+  font-size: 32rpx;
+}
+.baoermt {
+  margin-top: 72rpx;
+  background-color: white;
+  width: 83%;
+  margin: 142rpx auto;
+  text-align: center;
+  /* padding:143rpx 120rpx 45rpx 90rpx; */
+  border-radius: 20rpx;
+  padding-bottom: 50rpx;
+}
+.qrcode-wrp {
+  width: 612rpx;
+  background: #ffffff;
+  border-radius: 30rpx;
+  height: 734rpx;
+  margin: -166rpx auto;
+  box-shadow: 10rpx 10rpx 20rpx #d9d9d9; 
+  display: flex;
+  flex-flow: column;
+  justify-content: center; 
+  align-items: center;
+  text-align: center
+}
+.qrcode-wrp .tips{
+  margin-top: 40rpx;
+  line-height: 50rpx;
+}
+.qrcode-wrp .tips view:first-child{
+  font-weight: bold
+}
+.qrcode-wrp .tips view:last-child{
+  font-size: 28rpx;
+  color: rgb(102, 102, 102);
+}
+.woanderCoander {
+  background-color: white;
+  padding: 15rpx 0 5rpx 0rpx;
+  border-radius: 10rpx;
+  box-shadow: 1px 3px 5px rgb(226, 225, 225);
+}
+
+.woanderMoander {
+  background-color: white;
+  padding: 15rpx 0 5rpx 20rpx;
+  border-radius: 10rpx;
+  box-shadow: 1px 3px 5px rgb(226, 225, 225);
+}
+
+.font_28 {
+  font-size: 39rpx;
+}
+
+.font_27 {
+  font-size: 27rpx;
+}
+
+.qpaldte {
+  text-align: center;
+  line-height: 63rpx;
+}
+
+.dbwert {
+  line-height: 96rpx;
+}
+
+.dbwert image {
+  width: 42rpx;
+  height: 42rpx;
+  vertical-align: middle;
+}
+
+.tamerot image {
+  width: 26rpx;
+  height: 26rpx;
+}
+
+.palkeot {
+  font-size: 32rpx;
+}
+
+.qpale {
+  font-size: 29rpx;
+}
+
+.paoentd {
+  width: 65rpx;
+}
+
+.poajet {
+  border-bottom: 1px solid #e5e5e5;
+  margin: 0 20rpx 0 60rpx;
+}
+
+.vpalert {
+  font-size: 25rpx;
+  color: #666;
+}

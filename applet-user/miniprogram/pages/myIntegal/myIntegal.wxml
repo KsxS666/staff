@@ -1,0 +1,7 @@
+<!--pages/myIntegal/myIntegal.wxml-->
+<import src='../../template/integral/integral.wxml' />
+<view class='first'>
+  <template is='integral-card' data='{{integral, needIntegral}}'></template>
+  <navigator class='flex bold' hover-class='none' url='/pages/integralRecord/integralRecord'><text>积分记录</text><image src='../../images/common/arrrit.png'></image></navigator>
+</view>
+<image src='../../images/myIntegral/tc.png' class='tc'></image>

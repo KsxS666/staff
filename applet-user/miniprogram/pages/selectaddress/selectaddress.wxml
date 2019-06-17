@@ -1,0 +1,101 @@
+<view>
+  <view class='mnwoertn'>
+    <form bindsubmit='searchBox' report-submit>
+      <view class='lommd'>
+        <!-- 1 -->
+        <view class='flex palerkt' style='padding:10rpx 17rpx 10rpx 0'>
+          <view class='caoernt bold' style='width:339rpx;'>选择城市区</view>
+          <view class='qpelret'>
+            <view>
+              <picker class="soamert" mode="multiSelector" bindchange="bindCasPickerChange" value="{{multiIndex}}" bindcolumnchange="changeDateTimeColumn" range="{{multiArray}}">
+              <view>{{addres ? addres : '请选择'}}</view>
+              </picker>
+            </view>
+          </view>
+          <view class='wlaonet'>
+            <image src='../../images/common/arrrit.png'></image>
+          </view>
+        </view>
+        <!-- 1 -->
+
+        <!-- 2 -->
+        <view class='flex palerkt' style='padding:10rpx 17rpx 10rpx 0'>
+          <view class='caoernt bold' style='width:339rpx;'>选择街道</view>
+          <view class='qpelret'>
+            <picker class='soamert' bindchange="bindChangeStreet" value="{{streetVaule}}" range="{{streetArry}}" range-key='streetName'>
+              <view>{{streetName ? streetName : '请选择'}}</view>
+            </picker>
+          </view>
+          <view class='wlaonet'>
+            <image src='../../images/common/arrrit.png'></image>
+          </view>
+        </view>
+        <!-- 2 -->
+
+        <!-- 3 -->
+        <view class='flex' style='padding:10rpx 17rpx 10rpx 0'>
+          <view class='caoernt bold' style='width:339rpx;'>选择{{isSchool === 'true'? '学校' : '小区'}}</view>
+          <view class='qpelret'>
+            <picker class='soamert' bindchange="bindChangeCommunity" value="{{communityVaule}}" range="{{communityArry}}" range-key='name'>
+              <view>{{communityName ? communityName : '请选择'}}</view>
+            </picker>
+          </view>
+          <view class='wlaonet'>
+            <image src='../../images/common/arrrit.png'></image>            
+          </view>
+        </view>
+        <!-- 3 -->
+        <view style='height:20rpx;background-color:#f5f5f5;margin-left:-100%'></view>
+        <!-- 4 -->
+        <view class='flex palerkt' style='padding:10rpx 17rpx 10rpx 0'>
+          <view class='caoernt bold' style='width:339rpx;'>{{isSchool === 'true' ? '选择年段' : '选择楼号'}}</view>
+          <view class='qpelret'>
+            <picker class='soamert' bindchange="buildingNumber" value="{{buildingNumberVaule}}" range="{{houseDetail}}" range-key='label'>
+              <view>{{buildingNumberName ? buildingNumberName : '请选择'}}</view>
+            </picker>
+          </view>
+          <view class='wlaonet'>
+            <image src='../../images/common/arrrit.png'></image>
+          </view>
+        </view>
+        <!-- 4 -->
+
+        <!-- 5 -->
+        <view class='flex {{isSchool === "true" ? "" : "bor-e5"}}' style='padding:10rpx 17rpx 10rpx 0'>
+          <view class='caoernt bold' style='width:339rpx;'>{{isSchool === 'true' ? '选择班级' : '选择单元'}}</view>
+          <view class='qpelret'>
+            <picker class='soamert' bindchange="bindChangeunit" value="{{unitVaule}}" range="{{unitArry}}" range-key='label'>
+              <view>{{unitName ? unitName : '请选择'}}</view>
+            </picker>
+          </view>
+          <view class='wlaonet'>
+            <image src='../../images/common/arrrit.png'></image>
+          </view>
+        </view>
+        <!-- 5 -->
+
+
+        <!-- 6 -->
+        <view class='flex' style='padding:10rpx 17rpx 10rpx 0' wx:if='{{isSchool === "false"}}'>
+          <view class='caoernt bold' style='width:339rpx;'>门户</view>
+          <view class='qpelret'>
+            <picker class='soamert' bindchange="bindChangehouse" value="{{houseVaule}}" range="{{houseArry}}" range-key='label'>
+            <view>{{houseName ? houseName : '请选择'}}</view>
+            </picker>
+          </view>
+          <view class='wlaonet'>
+            <image src='../../images/common/arrrit.png'></image>
+          </view>
+        </view>
+        <!-- 6 -->
+
+
+      </view>
+
+      <button class='sumoaenrt' bindsubmit='searchBox' formType='submit'>绑定</button>
+    </form>
+
+  </view>
+
+
+</view>

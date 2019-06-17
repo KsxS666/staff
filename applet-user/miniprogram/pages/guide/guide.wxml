@@ -1,0 +1,7 @@
+<!--pages/guide/guide.wxml-->
+<image src='../../images/guide/1.png' mode='widthFix'></image>
+<image src='../../images/guide/2.png' mode='widthFix'></image>
+<image src='../../images/guide/3.png' mode='widthFix'></image>
+<image src='../../images/guide/4.png' mode='widthFix'></image>
+<image src='../../images/guide/5.png' mode='widthFix'></image>
+<image src='../../images/guide/6.png' mode='widthFix'></image>
